@@ -7,8 +7,13 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-        public function index(Post $post)
-    {
+        public function index(Post $post){/*PostはPostモデルのインスタンスで、これを宣言することでそのインスタンスに含まれる値が$postに入るということを示している。
+        */
         return view('posts/index')-> with (['posts'=>$post->getPaginateByLimit()]);//['posts'=>$post->get()]は連想配列の概念
     }
+    
+        public function show(Post $post){
+            return view('posts/show')->with(['post'=>$post]);
+        }
+        
 }

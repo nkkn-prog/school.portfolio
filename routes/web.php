@@ -11,6 +11,6 @@
 |
 */
 
-
-
 Route::get('/','PostController@index');
+
+Route::get('posts/{post}', 'PostController@show');//今回はLaravelのデフォルト機能であるDIを利用するため、'post/{id}'としない。
