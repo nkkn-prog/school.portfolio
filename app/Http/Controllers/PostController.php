@@ -9,6 +9,6 @@ class PostController extends Controller
 {
         public function index(Post $post)
     {
-        return $post->get();
+        return view('posts/index')-> with (['posts'=>$post->getPaginateByLimit()]);//['posts'=>$post->get()]は連想配列の概念
     }
 }
