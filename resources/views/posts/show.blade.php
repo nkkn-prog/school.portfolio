@@ -14,9 +14,10 @@
     <body>
         <h1>Blog Name</h1>
             <div class="post">
-                <h2 class="title">{{$post ->title}}</a></h2>
+                <h2 class="title">{{$post ->title}}</h2>
                 <p class="body">{{$post ->body}}</p>
             </div>
             <p class="back"><a href="/">back</a></p>
+            <p class="edit"><a href="/posts/edit/{{$post->id}}">Edit this blog</a></p>
     </body>
 </html>
