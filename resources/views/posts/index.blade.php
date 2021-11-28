@@ -23,5 +23,6 @@
         <div class='paginate'>
             {{$posts->links() }}
         </div>
+            <p class="create_blog"><a href="/posts/create">Create Blog</a></p>
     </body>
 </html>
