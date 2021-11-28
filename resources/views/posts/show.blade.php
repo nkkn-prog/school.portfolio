@@ -17,7 +17,21 @@
                 <h2 class="title">{{$post ->title}}</h2>
                 <p class="body">{{$post ->body}}</p>
             </div>
-            <p class="back"><a href="/">back</a></p>
-            <p class="edit"><a href="/posts/edit/{{$post->id}}">Edit this blog</a></p>
+            <p class="back"><a href="/">戻る</a></p>
+            <p class="edit"><a href="/posts/edit/{{$post->id}}">編集</a></p>
+            <form action="/posts/{{$post->id}}" method='POST' id="form_delete">
+                @csrf
+                @method('DELETE')
+                <imput type="submit"/>
+                <p class="delete"><span  style="color:blue; border-bottom: solid 1px blue" onclick="return deletePost(this)";>削除</span></p>
+            </form>
+            <script >
+                function deletePost(e){
+                    'use strict';
+                    if(confirm ('削除すると復元できません。\本当に削除しますか？')){
+                        document.getElementById('form_delete').submit();
+                    }
+                }
+            </script>
     </body>
 </html>
