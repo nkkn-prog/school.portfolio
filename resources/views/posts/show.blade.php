@@ -33,5 +33,6 @@
                     }
                 }
             </script>
+            <a href="">{{ $post->category->name }}</a>
     </body>
 </html>

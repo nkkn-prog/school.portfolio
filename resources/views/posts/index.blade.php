@@ -23,6 +23,9 @@
         <div class='paginate'>
             {{$posts->links() }}
         </div>
-            <p class="create_blog"><a href="/posts/create">Create Blog</a></p>
+        <p class="create_blog"><a href="/posts/create">Create Blog</a></p>
+        @foreach($posts as $post)
+            <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+        @endforeach
     </body>
 </html>

@@ -25,3 +25,5 @@ Route::put('posts/{post}', 'PostController@update');
 
 Route::delete('posts/{post}', 'PostController@delete');
 
+Route::get('posts/categories/{category}', 'CategoryController@index');
+
