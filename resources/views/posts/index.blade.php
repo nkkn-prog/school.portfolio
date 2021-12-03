@@ -18,14 +18,13 @@
             <div class="post">
                 <h2 class="title"><a href='/posts/{{$post ->id}}'>{{$post ->title}}</a></h2>
             </div>
+            <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
             @endforeach
         </div>
         <div class='paginate'>
             {{$posts->links() }}
         </div>
         <p class="create_blog"><a href="/posts/create">Create Blog</a></p>
-        @foreach($posts as $post)
-            <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
-        @endforeach
+            
     </body>
 </html>

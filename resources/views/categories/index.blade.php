@@ -11,7 +11,21 @@
         >
         
     </head>
-    <body>
-        
+    <body></body>
+       <h1>Blog Name</h1>
+        <div class='posts'>
+            @foreach($posts as $post)
+            <div class="post">
+                <h2 class="title"><a href='/posts/{{$post ->id}}'>{{$post ->title}}</a></h2>
+            </div>
+            <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+            @endforeach
+        </div>
+        <div class='paginate'>
+            {{$posts->links() }}
+        </div>
+        <p class="create_blog"><a href="/posts/create">Create Blog</a></p>
+        <p class="back"><a href="/">back</a></p>
+       
     </body>
 </html>
