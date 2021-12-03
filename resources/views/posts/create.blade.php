@@ -20,10 +20,19 @@
                     <input type="text" name="post[title]" placeholder="タイトル" value="{{ old('post.title')}}"/>
                     <p class='title_error' style="color:red">{{ $errors->first('post.title')}}</p>
                 </div></br>
-                    <textarea name="post[body]" row="3" colm="30" placeholder="ブログの内容">{{ old('post.body')}}</textarea></br>
-                    <p class='body_error' style="color:red">{{$errors->first('post.body')}}</p>
+                <textarea name="post[body]" row="3" colm="30" placeholder="ブログの内容">{{ old('post.body')}}</textarea></br>
+                <p class='body_error' style="color:red">{{$errors->first('post.body')}}</p>
+                <div class="category_id">
+                    <h2>Category</h2>
+                    <select name="post[category_id]">
+                        @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
             <input type="submit" value="ブログを作成"/>
         </form>
+    
         <p class="back"><a href="/">back</a></p>
     </body>
 </html>

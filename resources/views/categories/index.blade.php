@@ -11,8 +11,8 @@
         >
         
     </head>
-    <body>
-        <h1>Blog Name</h1>
+    <body></body>
+       <h1>Blog Name</h1>
         <div class='posts'>
             @foreach($posts as $post)
             <div class="post">
@@ -25,6 +25,7 @@
             {{$posts->links() }}
         </div>
         <p class="create_blog"><a href="/posts/create">Create Blog</a></p>
-            
+        <p class="back"><a href="/">back</a></p>
+       
     </body>
 </html>
