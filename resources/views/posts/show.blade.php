@@ -11,6 +11,8 @@
         >
         
     </head>
+    @extends('layouts.app')
+    @section('content')
     <body>
         <h1>Blog Name</h1>
             <div class="post">
@@ -35,4 +37,5 @@
             </script>
             <a href="">{{ $post->category->name }}</a>
     </body>
+    @endsection
 </html>
