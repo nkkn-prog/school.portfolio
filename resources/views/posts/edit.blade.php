@@ -11,6 +11,8 @@
         >
         
     </head>
+    @extends('layouts.app')
+    @section('content')
     <body>
         <h1>Edit Blog</h1>
         <form action="/posts/{{$post->id}}" method='POST'>
@@ -26,4 +28,5 @@
             <input type="submit" value="保存"/>
             <p class="back"><a href="/">back</a></p>
     </body>
+    @endsection
 </html>

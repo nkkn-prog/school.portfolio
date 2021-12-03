@@ -7,9 +7,8 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet"
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         >
-        
     </head>
     <body></body>
        <h1>Blog Name</h1>
@@ -26,6 +25,7 @@
         </div>
         <p class="create_blog"><a href="/posts/create">Create Blog</a></p>
         <p class="back"><a href="/">back</a></p>
+        
        
     </body>
 </html>

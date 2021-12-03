@@ -11,7 +11,10 @@
         >
         
     </head>
+    @extends('layouts.app')
+    @section('content')
     <body>
+        {{Auth::user()->name}}
         <h1>Blog Name</h1>
         <div class='posts'>
             @foreach($posts as $post)
@@ -25,6 +28,8 @@
             {{$posts->links() }}
         </div>
         <p class="create_blog"><a href="/posts/create">Create Blog</a></p>
+        <p><a href="/login">ログインはこちら</a></p>
             
     </body>
+    @endsection
 </html>

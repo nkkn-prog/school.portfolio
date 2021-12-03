@@ -11,6 +11,9 @@
         >
         
     </head>
+    
+    @extends('layouts.app')
+    @section('content')
     <body>
         <h1>Create Blog</h1>
         <form action="/posts" method='POST'>
@@ -35,4 +38,5 @@
     
         <p class="back"><a href="/">back</a></p>
     </body>
+    @endsection
 </html>
