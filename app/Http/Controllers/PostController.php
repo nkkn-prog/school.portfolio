@@ -6,12 +6,32 @@ use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Category;
+use GuzzleHttp\Client;
 
 class PostController extends Controller
 {
         public function index(Post $post){/*PostはPostモデルのインスタンスで、これを宣言することでそのインスタンスに含まれる値が$postに入るということを示している。
         */
-        return view('posts/index')-> with (['posts'=>$post->getPaginateByLimit()]); //['posts'=>$post->get()]は連想配列の概念, withメソッドの書き方
+        // return view('posts/index')-> with (['posts'=>$post->getPaginateByLimit()]); //['posts'=>$post->get()]は連想配列の概念, withメソッドの書き方
+        
+        $client = new \GuzzleHttp\Client();
+        
+        $url = 'https://teratail.com/api/v1/questions';
+        
+        $response = $client->request(
+            'GET',
+            $url,
+            ['Bearer' => config('services.teratail.token')] //Bearer tokenとはセキュリティートークンのうちその利用可否が「トークンの所有」で決まるもの。
+        );
+        
+        $questions = json_decode($response->getBody(), true);
+        
+        return view('index')->with([
+            'posts' => $post->getPaginateByLimit(),
+            'questions' => $questions['questions'],
+        ]);
+            
+            
         } 
         
     
