@@ -27,6 +27,12 @@
         <div class='paginate'>
             {{$posts->links() }}
         </div>
+        <div>
+            @foreach($questions as $question)
+            <a href="https://teratail.com/questions/{{ $question['id'] }}">
+            <p>{{$question['title']}}</p>
+            @endforeach
+        </div>
         <p class="create_blog"><a href="/posts/create">Create Blog</a></p>
         <p><a href="/login">ログインはこちら</a></p>
             
